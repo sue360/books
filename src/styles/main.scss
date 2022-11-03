@@ -1,0 +1,72 @@
+// Variables 
+$primary: #0722A1;
+$secondary: #A18607;
+
+.navbar {
+  background-color: $primary;
+  color: $secondary;
+  .nav-link{
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  background-color: lighten($primary, 40%);
+  flex-grow: 1;
+}
+
+// Hero Template Page 
+.hero-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+    .hero{
+      background-color: $primary;
+      padding: 40px;
+      border-radius: 18px;
+    }
+}
+
+//Book Card 
+.book-card{
+  .card{
+    border: none;
+    border-radius: 8px;
+  }
+  .card-image{
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #0722A1;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .card-body{
+    background-color: $secondary;
+    color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+// Single Page 
+.single-page{
+  div {
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
