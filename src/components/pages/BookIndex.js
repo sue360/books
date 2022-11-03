@@ -40,7 +40,7 @@ const BookIndex = () => {
   return (
     <main className="index-page">
       <Container className='mt-4'>
-        <h1>{`Books on : ${subject}`} </h1>
+        <h1>{`Showing books with subject ${subject} `} </h1>
         <Row>
           { works ?
             works.map( work => {
@@ -52,7 +52,7 @@ const BookIndex = () => {
               const authorName = authors[0].name
               return (
                 <Col key={keyId}md="6" lg="4" mb="4" className='book-card mb-4'>
-                  <Link to={`/books/${subject}/${keyId}`}>
+                  <Link subject={subject} to={`/books/${subject}/${keyId}`}>
                     <Card className='mb-1'>
                       <div className="card-image" style={{ backgroundImage: `url(https://covers.openlibrary.org/b/id/${cover_id}-M.jpg)` }}></div>
                       <Card.Body>

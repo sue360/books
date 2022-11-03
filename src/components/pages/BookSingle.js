@@ -85,6 +85,7 @@ const BookSingle = () => {
                 <h4>Subjects</h4>
                 <p>{subjects}</p>
                 <h2>{}</h2>
+                <Link to={'/books/:subject'} className='btn btn-main'>Back to Books</Link>
               </Col>
             </>
             // Else show an error else show loading...
