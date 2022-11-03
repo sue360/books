@@ -14,8 +14,9 @@ const App = () => {
         <PageNavbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/books" element={<BookIndex />}></Route>
-          <Route path="/books/:bookId" element={<BookSingle />}></Route>
+          <Route path="/books/:subject" element={<BookIndex />}></Route>
+          <Route path="/books/:subject/:bookId" element={<BookSingle />}></Route>
+          {/* <Route path="/books/:subject" element={<BookSingle />}></Route> */}
         </Routes>
       </BrowserRouter>
     </div>

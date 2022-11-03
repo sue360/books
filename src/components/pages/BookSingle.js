@@ -9,13 +9,12 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 
 //Custom Imports
-import BookIndex from './BookIndex'
 
 const BookSingle = () => {
   // ! State
   // set book object to null so that it doesn't retrun truthy in return
   const [ book, setBook ] = useState(null)
-  const [ errors, setErorrs ] = useState(false)
+  const [ errors, setErrors ] = useState(false)
   const [ description, setDescription ] = useState('')
   const [ subjects, setSubjects ] = useState([])
   // const [ authorName, setAuthorName ] = useEffect('')
@@ -34,6 +33,7 @@ const BookSingle = () => {
         getSubjects(data)
       } catch (err) {
         console.log(err)
+        setErrors(err.message)
       }
     }
     getBook()
@@ -89,7 +89,7 @@ const BookSingle = () => {
             </>
             // Else show an error else show loading...
             :
-            errors ? <h2>Funny error here</h2> : <h2>Loading...</h2> 
+            errors ? <h2>{errors}</h2> : <h2>Loading...</h2> 
           }
         </Row>
       </Container>

@@ -8,6 +8,9 @@ $secondary: #A18607;
   .nav-link{
     text-decoration: none;
     color: white;
+    &:hover{
+      color: $secondary;
+    }
   }
 }
 
@@ -22,7 +25,15 @@ main {
   flex-grow: 1;
 }
 
-// Hero Template Page 
+.btn-main{
+      background-color: #A18607;
+      margin-top: 20px;
+      &:hover{
+        background-color: lighten($secondary, 10%);
+      }
+    }
+
+// Hero Page 
 .hero-page{
   display: flex;
   align-items: center;
@@ -30,9 +41,20 @@ main {
   color: white;
     .hero{
       background-color: $primary;
-      padding: 40px;
+      padding: 50px 100px;
       border-radius: 18px;
     }
+    
+
+    input{
+      width: 70%;
+    }
+}
+
+.index-page{
+  h1{
+    margin-bottom: 25px;
+  }
 }
 
 //Book Card 
@@ -58,6 +80,9 @@ main {
   }
   a {
     text-decoration: none;
+  }
+  p {
+    margin: 0;
   }
 }
 

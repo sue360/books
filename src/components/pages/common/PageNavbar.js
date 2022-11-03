@@ -4,6 +4,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Container, Nav } from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 
+//Import custom components 
+import BookIndex from '../../pages/BookIndex'
+
 const PageNavbar = () => {
 
   return (
@@ -14,8 +17,7 @@ const PageNavbar = () => {
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'></Navbar.Collapse>
         <Nav>
           <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link as={Link} to="/books">Books Index</Nav.Link>
-          {/* <Nav.Link as={Link} to="/:bookId">BookSingle</Nav.Link> */}
+          <Nav.Link as={Link} to="/books/:subject">Books Index</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
