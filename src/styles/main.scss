@@ -2,6 +2,10 @@
 $primary: #0722A1;
 $secondary: #A18607;
 
+* {
+  font-family: 'Lora', serif;
+}
+
 .navbar {
   background-color: $primary;
   color: $secondary;
@@ -39,10 +43,15 @@ main {
   align-items: center;
   justify-content: center;
   color: white;
+  background-image: url(../images/Illustration-Library-of-Alexandria-Egypt.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
     .hero{
-      background-color: $primary;
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 50px 100px;
       border-radius: 18px;
+      
     }
     
 
@@ -54,11 +63,24 @@ main {
 .index-page{
   h1{
     margin-bottom: 25px;
+    span{
+      margin-left: 10px;
+      color: white;
+    }
+  }
+  .loading-container{
+    margin-top: 200px;
+    height: 200px;
+    background-image: url(../images/books.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
   }
 }
 
 //Book Card 
-.book-card{
+.book-card, .loading-card{
   .card{
     border: none;
     border-radius: 8px;
@@ -93,5 +115,23 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+}
+
+//Loading card 
+.loading-card {
+  .card-image{
+    height: 300px;
+    background-image: url(../images/books.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 8px;
+  }
+  .card-body{
+    border-radius: 8px;
+  }
+  p{
+    text-align: center;
   }
 }

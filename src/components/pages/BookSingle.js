@@ -1,6 +1,6 @@
 //Imports 
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
 import axios from 'axios'
 
 // Bootstrap Components 
@@ -9,19 +9,23 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 
 //Custom Imports
+import Home from './Home'
 
-const BookSingle = () => {
+const BookSingle = (props) => {
+  console.log(props)
   // ! State
   // set book object to null so that it doesn't retrun truthy in return
   const [ book, setBook ] = useState(null)
   const [ errors, setErrors ] = useState(false)
   const [ description, setDescription ] = useState('')
   const [ subjects, setSubjects ] = useState([])
-  // const [ authorName, setAuthorName ] = useEffect('')
+  const [ randomWorks, setRandomWorks ] = useState([])
 
 
   // ! Location 
   const { bookId } = useParams()
+  const { subject } = useParams()
+  const location = useLocation()
 
   // ! Execution
   useEffect(() => {
@@ -31,13 +35,14 @@ const BookSingle = () => {
         setBook(data)
         getDescription(data)
         getSubjects(data)
+        console.log('BookSingle props:', subject)
       } catch (err) {
         console.log(err)
         setErrors(err.message)
       }
     }
     getBook()
-  }, [bookId])
+  }, [bookId, subject])
 
   const getDescription = (book) => {
     const description = book.description
@@ -47,15 +52,7 @@ const BookSingle = () => {
     } else {
       setDescription(book.description) 
     } 
-    //else {
-    //   setDescription('No description available 😿 ')
-    // }
     
-  }
-
-  const getAuthorName = (props) => {
-    const { author } = props
-    console.log(author)
   }
 
   const getSubjects = (book) => {
@@ -85,7 +82,7 @@ const BookSingle = () => {
                 <h4>Subjects</h4>
                 <p>{subjects}</p>
                 <h2>{}</h2>
-                <Link to={'/books/:subject'} className='btn btn-main'>Back to Books</Link>
+                <Link to={`/books/${subject}`} className='btn btn-main'>Back to Books</Link>
               </Col>
             </>
             // Else show an error else show loading...

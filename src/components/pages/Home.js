@@ -1,6 +1,7 @@
 //React components 
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import BookSingle from './BookSingle'
 
 const Home = () => {
 
@@ -13,18 +14,30 @@ const Home = () => {
   }
 
   const handleChange = (e) => {
-    setSubject(e.target.value)
+    let input = e.target.value
+    if (input.includes(' ')) {
+      input = input.replace(' ', '-')
+    }
+    setSubject(input)
   }
 
 
   return (
     <main className='hero-page text-center'>
       <div className='hero'>
-        <h1 className='display-3'>📚 Library 📚</h1>
-        <p className='lead'>Type in a subject to get books!</p>
+        <h1 className='display-3'> Alexandria </h1>
+        <p className='lead'>Type in a subject to get a selection of books</p>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="subject" onChange={handleChange} placeholder="Type book subject here..."/>
-          <Link to={`/books/${subject}`}className='btn btn-main'>Discover Books</Link>
+          <input required type="text" name="subject" onChange={handleChange} placeholder="Type book subject here..."/>
+          { subject ?
+            <>
+              <Link to={`/books/${subject}`}className='btn btn-main'>Discover Books</Link>
+            </>
+            :
+            <>
+              <Link to={'/'}className='btn btn-main'>Discover Books</Link>
+            </>
+          }
         </form>
       </div>
     </main>

@@ -29,7 +29,6 @@ const PageNavbar = () => {
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'></Navbar.Collapse>
         <Nav>
           <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link as={Link} to={'/books/:subject'}>Books Index</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
