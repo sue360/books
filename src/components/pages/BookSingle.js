@@ -31,7 +31,7 @@ const BookSingle = (props) => {
   useEffect(() => {
     const getBook = async () => {
       try {
-        const { data } = await axios.get(`http://openlibrary.org/works/${bookId}.json`)
+        const { data } = await axios.get(`https://openlibrary.org/works/${bookId}.json`)
         setBook(data)
         getDescription(data)
         getSubjects(data)

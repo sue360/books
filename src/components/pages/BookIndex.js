@@ -49,7 +49,7 @@ const BookIndex = () => {
     const getBooks = async () => {
       generateRandomSelection()
       try {
-        const { data } = await axios.get(`http://openlibrary.org/subjects/${subject}.json?limit=200`)
+        const { data } = await axios.get(`https://openlibrary.org/subjects/${subject}.json?limit=200`)
         const { works } = data
         setWorks(works)
         console.log(data.works.length)
